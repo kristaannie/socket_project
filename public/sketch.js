@@ -1,45 +1,91 @@
-//figure out how to do two canvases?
 //how to send button pushes
 //host on heroku
 
 
 
+
+
 var socket;
 
-function setup() {
+function setup(){
   createCanvas(windowWidth, windowHeight);
-  background(200,80,30);
-
   socket = io.connect('http://localhost:3000');
-  socket.on('mouse', newDrawing); 
+  
+  var hit = false;
 
 }
 
-function newDrawing(data) {
+
+
+function draw(){
+	background(200,80,30);
 	stroke(255);
-	fill(0);
-	ellipse(data.x, data.y, 20, 20);
+	fill(100,20,100);
+	ellipse(windowWidth/2,100,150,150);
+	fill(150,30,100);
+	ellipse(windowWidth/2, 300, 150, 150);
+	fill(120,70,80);
+	ellipse(windowWidth/2, 500, 150, 150);
 
 
 }
 
-function mouseDragged() {
-	console.log("you draggin");
+function mousePressed(){
 
+	ellipseButton(windowWidth/2,100,150,150, "clicky", buttonHit);
+	ellipseButton(windowWidth/2, 300, 150, 150, "boom", buttonHit);
+	ellipseButton(windowWidth/2, 500, 150, 150, "boom2", buttonHit);
+
+	
+
+	
+}
+
+function ellipseButton(x,y,w,h, name, callback){
+	var hit = false;
+
+	hit = collidePointCircle(mouseX,mouseY,x,y,w,h); //see if the mouse is in the rect
+
+	if(hit){ //if its inside fire the callback
+		callback(hit, name);
+	}
+}
+
+// function ellipseButton2(x,y,w,h, callback){
+// 	var hit = false;
+
+// 	hit = collidePointCircle(mouseX,mouseY,x,y,w,h); //see if the mouse is in the rect
+
+// 	if(hit){ //if its inside fire the callback
+// 		callback(hit);
+// 	}
+// }
+
+
+function buttonHit(callbackData, name){
+	//do things when the button gets pressed.......
+	console.log(name)
+	
 	var data = {
 		x: mouseX,
 		y: mouseY
+
 	}
 
-	socket.emit('mouse', data);
-
-	stroke(0);
-	fill(255);
-	ellipse(mouseX, mouseY, 20, 20);
+	socket.emit(name, data);
 }
 
-function draw() {
+// function buttonHit2(callbackData){
+// 	//do things when the button gets pressed.......
+// 	console.log("dang")
 	
-	
-  
-}
+// 	var data = {
+// 		x: mouseX,
+// 		y: mouseY
+
+// 	}
+
+// 	socket.emit('boom', data);
+// }
+
+
