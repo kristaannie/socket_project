@@ -1,6 +1,13 @@
 var express = require('express');
 var app = express();
-var server = app.listen("https://tranquil-ravine-39783.herokuapp.com/");
+// var server = app.listen(3000);
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+
+server.listen(process.env.PORT || 3000);
+
+
+
 
 app.use(express.static('public'));
 
@@ -8,7 +15,7 @@ console.log("my socket server is running");
 
 var socket = require('socket.io');
 
-var io = socket(server);
+// var io = socket(server);
 
 io.sockets.on('connection', newConnection);
 
