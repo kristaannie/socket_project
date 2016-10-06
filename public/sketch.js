@@ -9,7 +9,7 @@ var socket;
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  socket = io.connect('http://localhost:3000');
+  socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
   
   var hit = false;
 
