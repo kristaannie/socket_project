@@ -5,8 +5,8 @@ var socket;
 function setup() {
   background(200,80,30);
   createCanvas(windowWidth, windowHeight);
-  // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
-  socket = io.connect('localhost:3000')
+  socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
+  // socket = io.connect('localhost:3000')
   socket.on('navigate', changeColor); 
   socket.on('fragment', addCircles);
   socket.on('blueforms', hello);
