@@ -39,7 +39,7 @@ function addCircles(){
 	background(0);
 	textSize(40);
 	fill(255);
-	text("ur cute", windowWidth/2, windowHeight/2);
+	text("ur butt", windowWidth/2, windowHeight/2);
 }
 
 function hello(){
