@@ -119,19 +119,19 @@ function draw(){
 	var c1r1 = new wordButton (collumn1, row1, 100, 110, 20, 30);
 	c1r1.display();
 
-	var c2r1 = new wordButton (collumn2, row1, 200, 110, 20, 30);
+	var c2r1 = new wordButton (collumn2, row1, 150, 110, 20, 30);
 	c2r1.display();
 
 	var c3r1 = new wordButton (collumn3, row1, 110, 110, 20, 30);
 	c3r1.display();
 
-	var c1r2 = new wordButton (collumn1, row2, 110, 20, 30);
+	var c1r2 = new wordButton (collumn1, row2, 130, 20, 30);
 	c1r2.display();
 
-	var c2r2 = new wordButton (collumn2, row2, 110, 20, 30);
+	var c2r2 = new wordButton (collumn2, row2, 101, 20, 30);
 	c2r2.display();
 
-	var c3r2 = new wordButton (collumn3, row2, 110, 20, 30);
+	var c3r2 = new wordButton (collumn3, row2, 11, 20, 30);
 	c3r2.display();
 
 	var c1r3 = new wordButton (collumn1, row3, 110, 20, 30);
