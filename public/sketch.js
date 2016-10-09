@@ -23,10 +23,28 @@ function ftext(fountain, particle) {
   text(s[particle.id%26], particle.location.x, particle.location.y);
 }
 
+
+function wordButton(x, y, size, r, g, b) {
+    	this.x = x,
+    	this.y = y,
+    	this.r = r,
+    	this.g = g,
+    	this.size = size;
+    	this.display = function () {
+    	 stroke(255);
+    	 fill(r,g,b);
+    	 ellipse( x, y, size, size)
+    	}
+    	this.buttonSelect = function (mouseIsPressed) {
+    	   r = r + 1;
+    	   size = size + 1 % windowWidth;
+    	}
+    }
+
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
-  // socket = io.connect('localhost:3000');
+  // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
+  socket = io.connect('localhost:3000');
 	
   textFont('Roboto Mono'); 
 
@@ -37,11 +55,11 @@ function setup(){
   var t =
     {
         // name: "test",
-        shape: "text",
+        shape: "ellipse",
         colors: [[255,150],[200,150],[150,150]],
         lifetime: 600,
         angle: [640, 100],
-        size: [2, 10],
+        size: [1, 5],
         dxy: [0.1, 0.1],
         x: 0.5,
         y: 0.1
@@ -49,6 +67,9 @@ function setup(){
 
     Fountain_display("text", ftext); //set draw function based on shape name
     of = new Fountain(null, t);
+
+
+
 
 }
 
@@ -76,12 +97,14 @@ function draw(){
 	var row3 = windowHeight * (3/4);
 	
 	
-	function displayButton( x, y, size, r, g, b){
-		stroke(255);
-		strokeWeight(2);
-		fill(r,g,b);
-		ellipse(x, y, size, size);
-	}
+	// function displayButton( x, y, size, r, g, b){
+	// 	stroke(255);
+	// 	strokeWeight(2);
+	// 	fill(r,g,b);
+	// 	ellipse(x, y, size, size);
+	// }
+
+
 
 	function displayText(word, x, y){
 		noStroke();
@@ -93,105 +116,78 @@ function draw(){
 
 
 
+	var c1r1 = new wordButton (collumn1, row1, 100, 110, 20, 30);
+	c1r1.display();
 
-	displayButton(collumn1, row1, 120, 110, 20, 30);
-	displayText("NAVIGATE", collumn1, row1 + 7);
+	var c2r1 = new wordButton (collumn2, row1, 200, 110, 20, 30);
+	c2r1.display();
 
-	displayButton(collumn2, row1, 180, 120, 10, 20);
-	displayText("FRAGMENT", collumn2, row1 + 7);
+	var c3r1 = new wordButton (collumn3, row1, 110, 110, 20, 30);
+	c3r1.display();
 
-	displayButton(collumn3, row1, 150, 110, 20, 30);
-	displayText("BLUEFORMS", collumn3, row1 + 7);
+	var c1r2 = new wordButton (collumn1, row2, 110, 20, 30);
+	c1r2.display();
 
-	displayButton(collumn1, row2, 150, 100, 0, 40);
-	displayText("PARTICLE", collumn1, row2 + 7);
+	var c2r2 = new wordButton (collumn2, row2, 110, 20, 30);
+	c2r2.display();
 
-	displayButton(collumn2, row2, 110, 110, 30, 30);
-	displayText("MODIFY", collumn2, row2 + 7);
+	var c3r2 = new wordButton (collumn3, row2, 110, 20, 30);
+	c3r2.display();
 
-	displayButton(collumn3, row2, 160, 120, 20, 30);
-	displayText("TRACE", collumn3, row2 + 7);
+	var c1r3 = new wordButton (collumn1, row3, 110, 20, 30);
+	c1r3.display();
 
-	displayButton(collumn1, row3, 160, 140, 20, 30);
-	displayText("SUBMIT", collumn1, row3 + 7);
+	var c2r3 = new wordButton (collumn2, row3, 110, 20, 30);
+	c2r3.display();
 
-	displayButton(collumn2, row3, 160, 110, 20, 40);
-	displayText("WINDOWS", collumn2, row3 + 7);
-
-	displayButton(collumn3, row3, 120, 110, 40, 30);
-	displayText("COLLECT", collumn3, row3 + 7);
-
-
-		
-		
+	var c3r3 = new wordButton (collumn3, row3, 110, 20, 30);
+	c3r3.display();
 
 
-	// fill(150,30,100, 150);
-	// ellipse(collumn2, row1, 150, 150);
-	// fill(110,70,100, 150);
-	// ellipse(collumn3, row1, 140, 140);
-	// fill(100,20,100, 150);
-	// ellipse(collumn1, row2, 150, 150);
-	// fill(150,30,100, 150);
-	// ellipse(collumn2, row2, 135, 135);
-	// fill(170,70,100, 150);
-	// ellipse(collumn3, row2, 120, 120);
-	// fill(120,20,100, 150);
-	// ellipse(collumn1, row3, 125, 125);
-	// fill(103, 30, 145);
-	// ellipse(collumn2, row3, 150, 150);
-	// fill(181, 52, 1);
-	// ellipse(collumn3, row3, 150, 150);
 
-	
-	// fill(240,50);
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("NAVIGATE", collumn1+3, row1+3);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("FRAGMENT", collumn2, row1+7);
+	// displayButton(collumn1, row1, 120, 110, 20, 30);
+	// displayText("NAVIGATE", collumn1, row1 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("BLUEFORMS", collumn3, row1+7);
+	// displayButton(collumn2, row1, 180, 120, 10, 20);
+	// displayText("FRAGMENT", collumn2, row1 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("PARTICLE", collumn1, row2+7);
+	// displayButton(collumn3, row1, 150, 110, 20, 30);
+	// displayText("BLUEFORMS", collumn3, row1 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("MODIFY", collumn2, row2+7);
+	// displayButton(collumn1, row2, 150, 100, 0, 40);
+	// displayText("PARTICLE", collumn1, row2 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("TRACE", collumn3, row2+7);
+	// displayButton(collumn2, row2, 110, 110, 30, 30);
+	// displayText("MODIFY", collumn2, row2 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("SUBMIT", collumn1, row3+7);
+	// displayButton(collumn3, row2, 160, 120, 20, 30);
+	// displayText("TRACE", collumn3, row2 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("WINDOWS", collumn2, row3+7);
+	// displayButton(collumn1, row3, 160, 140, 20, 30);
+	// displayText("SUBMIT", collumn1, row3 + 7);
 
-	// noStroke();
-	// textSize(20);
-	// textAlign(CENTER);
-	// text("COLLECT", collumn3, row3+7);
+	// displayButton(collumn2, row3, 160, 110, 20, 40);
+	// displayText("WINDOWS", collumn2, row3 + 7);
+
+	// displayButton(collumn3, row3, 120, 110, 40, 30);
+	// displayText("COLLECT", collumn3, row3 + 7);
+
+	// if (mouseIsPressed) {
+	// 	displayButton.fill(0);
+	// } else {
+	// 	displayButton = displayButton;
+	// }
+
 
 
 }
+
+
+// function buttonSelect(){
+// 	displayButton.fill(0);
+// }
+
 
 function mousePressed(){
 
@@ -226,20 +222,13 @@ function ellipseButton(x,y,w,h, name, callback){
 	}
 }
 
-// function ellipseButton2(x,y,w,h, callback){
-// 	var hit = false;
-
-// 	hit = collidePointCircle(mouseX,mouseY,x,y,w,h); //see if the mouse is in the rect
-
-// 	if(hit){ //if its inside fire the callback
-// 		callback(hit);
-// 	}
-// }
 
 
 function buttonHit(callbackData, name){
 	//do things when the button gets pressed.......
-	console.log(name)
+	console.log(name);
+
+	background(0);
 	
 	var data = {
 		x: mouseX,
@@ -250,17 +239,5 @@ function buttonHit(callbackData, name){
 	socket.emit(name, data);
 }
 
-// function buttonHit2(callbackData){
-// 	//do things when the button gets pressed.......
-// 	console.log("dang")
-	
-// 	var data = {
-// 		x: mouseX,
-// 		y: mouseY
-
-// 	}
-
-// 	socket.emit('boom', data);
-// }
 
 
