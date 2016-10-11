@@ -5,66 +5,112 @@ var socket;
 function setup() {
   background(200,80,30);
   createCanvas(windowWidth, windowHeight);
+  textFont('Roboto Mono'); 
   // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
   
-  socket = io.connect('localhost:3000')
-  socket.on('navigate', changeColor); 
-  socket.on('fragment', addCircles);
-  socket.on('blueforms', hello);
-  socket.on('particle', hello2);
-  socket.on('modify', hello3);
-  socket.on('trace', addCircles);
-  socket.on('submit', hello);
-  socket.on('windows', addCircles);
-  socket.on('collect', hello2);
+ socket = io.connect('localhost:3000')
+  socket.on('navigate', navigate); 
+  socket.on('fragment', fragment);
+  socket.on('blueforms', blueforms);
+  socket.on('particle', particle);
+  socket.on('modify', modify);
+  socket.on('trace', trace);
+  socket.on('submit', submit);
+  socket.on('windows', windows);
+  socket.on('collect', collect);
+
+  var seconds; 
+  var change;
 
 }
 
 function draw() {
 
-	
+  seconds = millis() / 1000;
+  change = map(sin(seconds), -1, 1, 0, 10)
 	
   
 }
 
-function changeColor(){
+function navigate(){
 	console.log("click came through");
-	background(250);
-	textSize(40);
-	fill(0);
-	text("hello tommy", windowWidth/2, windowHeight/2);
-}
-
-function addCircles(){
-	console.log("click 2 came through");
-	background(0);
-	textSize(40);
+	background(57, 109, 132);
+	textSize(200);
+	textAlign(CENTER);
 	fill(255);
-	text("ur butt", windowWidth/2, windowHeight/2);
+	text("NAVIGATE", windowWidth/2, windowHeight/2);
 }
 
-function hello(){
-	console.log("click 3 came through");
-	background(100);
-	textSize(40);
-	fill(200, 0, 0);
-	text("hello tommy", windowWidth/2, windowHeight/2);
-}
-
-function hello2(){
-	console.log("click 3 came through");
-	background(100);
-	textSize(40);
-	fill(200, 0, 0);
-	text("i want snacks", windowWidth/2, windowHeight/2);
-}
-
-function hello3(){
+function fragment(){
 	console.log("click 2 came through");
-	background(0);
-	textSize(40);
+	background(57, 109, 132);
+	textSize(200);
 	fill(255);
-	text("and thangs", windowWidth/2, windowHeight/2);
+	textAlign(CENTER)
+	text("FRAGMENT", windowWidth/2 + change, windowHeight/2);
+}
+
+function blueforms(){
+	console.log("click 3 came through");
+	background(57, 109, 132);
+	textSize(200);
+	fill(255);
+	textAlign(CENTER)
+	text("BLUEFORMS", windowWidth/2, windowHeight/2);
+}
+
+function particle(){
+	console.log("click 3 came through");
+	background(57, 109, 132);
+	textSize(200);
+	fill(255);
+	textAlign(CENTER)
+	text("PARTICLE", windowWidth/2, windowHeight/2);
+}
+
+function modify(){
+	console.log("click 2 came through");
+	background(57, 109, 132);
+	textSize(200);
+	fill(255);
+	textAlign(CENTER)
+	text("MODIFY", windowWidth/2, windowHeight/2);
+}
+
+function trace(){
+	console.log("click 2 came through");
+	background(57, 109, 132);
+	textSize(200);
+	fill(255);
+	textAlign(CENTER)
+	text("TRACE", windowWidth/2, windowHeight/2);
+}
+
+function submit(){
+	console.log("click 2 came through");
+	background(57, 109, 132);
+	textSize(200);
+	fill(255);
+	textAlign(CENTER)
+	text("SUBMIT", windowWidth/2, windowHeight/2);
+}
+
+function windows(){
+	console.log("click 2 came through");
+	background(57, 109, 132);
+	textSize(200);
+	fill(255);
+	textAlign(CENTER)
+	text("WINDOWS", windowWidth/2, windowHeight/2);
+}
+
+function collect(){
+	console.log("click 2 came through");
+	background(57, 109, 132);
+	textSize(300);
+	fill(255);
+	textAlign(CENTER)
+	text("COLLECT", windowWidth/2, windowHeight/2 - 100);
 }
 
 // function newDrawing(data) {
