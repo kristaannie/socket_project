@@ -6,9 +6,14 @@ function setup() {
   background(200,80,30);
   createCanvas(windowWidth, windowHeight);
   textFont('Roboto Mono'); 
-  // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
+
+  //work on the web!!!!!!!!!!!!
+ socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
   
- socket = io.connect('localhost:3000')
+ //work on your localhost!!!!!!!!!!!  
+ // socket = io.connect('localhost:3000')
+
+
   socket.on('navigate', navigate); 
   socket.on('fragment', fragment);
   socket.on('blueforms', blueforms);

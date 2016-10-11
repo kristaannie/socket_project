@@ -1,10 +1,15 @@
 var express = require('express');
 var app = express();
-var server = app.listen(3000);
-// var server = require('http').createServer(app);
+
+//for working on localhost!!! 
+// var server = app.listen(3000);
+
 var io = require('socket.io').listen(server);
 
-// server.listen(process.env.PORT || 3000);
+
+//for working on the web!! 
+var server = require('http').createServer(app);
+server.listen(process.env.PORT || 3000);
 
 
 
