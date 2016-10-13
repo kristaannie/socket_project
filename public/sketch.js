@@ -83,7 +83,7 @@ function draw(){
 
 	var collumn1 = windowWidth * (1/4) + 90;
 	var collumn2 = windowWidth * (2/4) + 70;
-	var collumn3 = windowWidth * (3/4) + 70;
+	var collumn3 = windowWidth * (3/4) + 50;
 	var row1 = windowHeight * (1/4);
 	var row2 = windowHeight * (2/4);
 	var row3 = windowHeight * (3/4);
