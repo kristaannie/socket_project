@@ -81,9 +81,9 @@ function setup(){
 
 function draw(){
 
-	var collumn1 = windowWidth * (1/4) + 100;
-	var collumn2 = windowWidth * (2/4) + 80;
-	var collumn3 = windowWidth * (3/4) + 60;
+	var collumn1 = windowWidth * (1/4) + 90;
+	var collumn2 = windowWidth * (2/4) + 70;
+	var collumn3 = windowWidth * (3/4) + 70;
 	var row1 = windowHeight * (1/4);
 	var row2 = windowHeight * (2/4);
 	var row3 = windowHeight * (3/4);
@@ -133,7 +133,7 @@ function draw(){
 	// c1r1.name();
 	
 
-	var c2r1 = new wordButton (collumn2, row1, 1500, 10, 10, 40, "fragment");
+	var c2r1 = new wordButton (collumn2, row1, 150, 10, 10, 40, "fragment");
 	c2r1.display();
 	// c2r1.name();
 
@@ -198,7 +198,7 @@ function draw(){
 			textAlign(CENTER);
 			textSize(40 + change);
 			fill(200, a -100);
-			text("((TRANSMITTING))", windowWidth/2, windowHeight/2 + 20);
+			text("((TRANSMITTING))", windowWidth/2 + 75, windowHeight/2 + 20);
 
 		    }
 	    
