@@ -88,7 +88,7 @@ function draw(){
 	var row2 = windowHeight * (2/4);
 	var row3 = windowHeight * (3/4);
 	
-	background(57, 109, 132);
+	background(57, 94, 130);
 
 
 
@@ -163,6 +163,8 @@ function draw(){
 	noStroke();
 	fill(255);
 
+	textSize(22);
+
 	c1r1.name();
 	c2r1.name();
 	c3r1.name();
@@ -181,17 +183,22 @@ function draw(){
 			console.log("squares?")
 			counter = 150;
 		}
+			//screen black
 			var a = map(counter, 0, 150, 0, 240)
 			rectMode(CORNER);
 			fill(0, a);
 		    rect(0, 0, windowWidth, windowHeight);
+		    //fountain
 			of.Draw();
 		    of.Create();
 		  	of.Step();
 		    noStroke();
 			fill(255);
-			// textSize(16);
-			// wordButton.buttonSelect();
+			//word
+			textAlign(CENTER);
+			textSize(40 + change);
+			fill(200, a -100);
+			text("((TRANSMITTING))", windowWidth/2, windowHeight/2 + 20);
 
 		    }
 	    
@@ -238,7 +245,7 @@ function ellipseButton(x,y,w,h, name, callback){
 		callback(hit, name);
 		console.log("got here")
 		isHit = true;
-		setTimeout(stop, 4000);
+		setTimeout(stop, 90000);
 		function stop () {
 		  	isHit = false;
 		  	counter = 0;
