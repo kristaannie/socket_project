@@ -154,14 +154,14 @@ function draw(){
 	var c1r3 = new wordButton (collumn1, row3, 130, 10, 10, 40, "submit");
 	c1r3.display();
 
-	var c2r3 = new wordButton (collumn2, row3, 130, 10, 40, 40, "windows");
+	var c2r3 = new wordButton (collumn2, row3, 140, 10, 40, 40, "windows");
 	c2r3.display();
 
 	var c3r3 = new wordButton (collumn3, row3, 140, 10, 10, 30, "collect");
 	c3r3.display();
 
 	noStroke();
-	fill(255);
+	fill(255,200);
 
 	textSize(22);
 
