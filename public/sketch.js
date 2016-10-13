@@ -68,7 +68,7 @@ function setup(){
         angle: [640, 100],
         size: [1, 5],
         dxy: [0.1, 0.1],
-        x: 0.5,
+        x: 0.6,
         y: 0.1
     };
 
