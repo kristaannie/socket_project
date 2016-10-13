@@ -4,7 +4,7 @@ var socket;
 
 var counterReceive;
 circleColor = 0;
-var b;
+
 
 
 function setup() {
@@ -34,21 +34,15 @@ function setup() {
   var seconds; 
   var change;
 
-  // counterReceive = 0;
 
-  b = 255;
-  x = 0
 
 }
 
 function draw() {
 
-
-
   seconds = millis() / 1000;
-  change = map(sin(seconds), -1, 1, 0, 100);	
-
-
+  change = map(sin(seconds), -1, 1, 0, 100);
+  	
 
 }
 
