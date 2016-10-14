@@ -128,36 +128,36 @@ function draw(){
 	
 
 
-	var c1r1 = new wordButton (collumn1, row1, 150, 10, 20, 40, "navigate");
+	var c1r1 = new wordButton (collumn1, row1, 160, 10, 20, 40, "navigate");
 	c1r1.display();
 	// c1r1.name();
 	
 
-	var c2r1 = new wordButton (collumn2, row1, 150, 10, 10, 40, "fragment");
+	var c2r1 = new wordButton (collumn2, row1, 160, 10, 10, 40, "fragment");
 	c2r1.display();
 	// c2r1.name();
 
-	var c3r1 = new wordButton (collumn3, row1, 150, 10, 30, 40, "blueforms");
+	var c3r1 = new wordButton (collumn3, row1, 160, 10, 30, 40, "blueforms");
 	c3r1.display();
 	// c3r1.name();
 
 
-	var c1r2 = new wordButton (collumn1, row2, 150, 10, 10, 40, "particle");
+	var c1r2 = new wordButton (collumn1, row2, 160, 10, 10, 40, "particle");
 	c1r2.display();
 
-	var c2r2 = new wordButton (collumn2, row2, 150, 10, 30, 40, "modify");
+	var c2r2 = new wordButton (collumn2, row2, 160, 10, 30, 40, "modify");
 	c2r2.display();
 
-	var c3r2 = new wordButton (collumn3, row2, 150, 20, 10, 40, "trace");
+	var c3r2 = new wordButton (collumn3, row2, 160, 20, 10, 40, "trace");
 	c3r2.display();
 
-	var c1r3 = new wordButton (collumn1, row3, 150, 10, 10, 40, "submit");
+	var c1r3 = new wordButton (collumn1, row3, 160, 10, 10, 40, "submit");
 	c1r3.display();
 
-	var c2r3 = new wordButton (collumn2, row3, 150, 10, 40, 40, "windows");
+	var c2r3 = new wordButton (collumn2, row3, 160, 10, 40, 40, "windows");
 	c2r3.display();
 
-	var c3r3 = new wordButton (collumn3, row3, 150, 10, 10, 30, "collect");
+	var c3r3 = new wordButton (collumn3, row3, 160, 10, 10, 30, "collect");
 	c3r3.display();
 
 	noStroke();
