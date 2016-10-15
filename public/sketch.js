@@ -186,7 +186,7 @@ function draw(){
 			//screen black
 			var a = map(counter, 0, 150, 0, 240)
 			rectMode(CORNER);
-			fill(0, a);
+			fill(0);
 		    rect(0, 0, screen.width, screen.height);
 		    //fountain
 			of.Draw();
@@ -197,7 +197,7 @@ function draw(){
 			//word
 			textAlign(CENTER);
 			textSize(40 + change);
-			fill(200, a -100);
+			fill(200, a);
 			text("((TRANSMITTING))", windowWidth/2 + 75, windowHeight/2 + 20);
 
 		    }
