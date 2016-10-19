@@ -14,10 +14,10 @@ function setup() {
   textFont('Roboto Mono'); 
 
   //work on the web!!!!!!!!!!!!
- socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
+ // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
   
  //work on your localhost!!!!!!!!!!!  
- // socket = io.connect('localhost:3000')
+ socket = io.connect('localhost:3000')
 
 
   socket.on('navigate', navigate); 

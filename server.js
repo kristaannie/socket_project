@@ -2,16 +2,16 @@ var express = require('express');
 var app = express();
 
 //for working on localhost!!! 
-// var server = app.listen(3000);
+var server = app.listen(3000);
 
 //for working on interwebs!!! 
-var server = require('http').createServer(app);
+// var server = require('http').createServer(app);
 
 var io = require('socket.io').listen(server);
 
 
 //for working on the web!! 
-server.listen(process.env.PORT || 3000);
+// server.listen(process.env.PORT || 3000);
 
 
 

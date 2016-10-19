@@ -47,10 +47,10 @@ function setup(){
   createCanvas(screen.width, screen.height);
 
   // for working on the web! 
-  socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
+  // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
 
   //for working on localhost! 
-  // socket = io.connect('localhost:3000');
+  socket = io.connect('localhost:3000');
 	
   textFont('Roboto Mono'); 
 
@@ -175,6 +175,9 @@ function draw(){
 	c2r3.name();
 	c3r3.name();
 
+  	
+
+
 
 	if (isHit == true) {
 		counter++;
@@ -183,6 +186,9 @@ function draw(){
 			console.log("squares?")
 			counter = 150;
 		}
+ 
+ 			timeBar = map(counter, 0, 5410, 0, 192);
+
 			//screen black
 			var a = map(counter, 0, 150, 0, 240)
 			rectMode(CORNER);
@@ -199,6 +205,13 @@ function draw(){
 			textSize(40 + change);
 			fill(200, a);
 			text("((TRANSMITTING))", windowWidth/2 + 75, windowHeight/2 + 20);
+			rectMode(CORNER);
+			stroke(255);
+			noFill();
+			rect(windowWidth/2 - 20, windowHeight/2 + 80, 200, 20);
+			noStroke();
+			fill(57, 94, 130, 200);
+			rect(windowWidth/2 - 15, windowHeight/2 + 83, timeBar, 15);
 
 		    }
 	    
