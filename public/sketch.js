@@ -47,10 +47,10 @@ function setup(){
   createCanvas(screen.width, screen.height);
 
   // for working on the web! 
-  // socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
+  socket = io.connect('https://tranquil-ravine-39783.herokuapp.com/');
 
   //for working on localhost! 
-  socket = io.connect('localhost:3000');
+  // socket = io.connect('localhost:3000');
 	
   textFont('Roboto Mono'); 
 
